@@ -1,46 +1,97 @@
-# Getting Started with Create React App
+# React Accessible Modal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is an example of a modal (dialog) component made with React. It's made to be simple and accessible.
 
-## Available Scripts
+[View project](https://sargalias-react-modal.netlify.app)
 
-In the project directory, you can run:
 
-### `npm start`
+## Table of contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [Getting started with Docker](#getting-started-with-docker)
+- [Getting started with Node and NPM](#getting-started-with-node-and-npm)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Running the project for development](#running-the-project-for-development)
+- [Usage](#usage)
+  - [Starting the project](#starting-the-project)
+  - [Building the project](#building-the-project)
+- [Built with](#built-with)
+- [License](#license)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting started with Docker
 
-### `npm test`
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Make sure Docker and docker compose are installed and that you're able to run containers. Please see [Docker installation instructions](https://docs.docker.com/get-docker/).
+2. Clone the repo
 
-### `npm run build`
+```
+git clone https://github.com/sargalias/react-modal
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Open a terminal and `cd` into the react-modal folder.
+4. Run `docker compose up`
+5. Visit http://localhost:3000 in your browser.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Getting started with Node and NPM
 
-### `npm run eject`
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Prerequisites
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- NPM
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Installation requires [NPM](https://www.npmjs.com/) which is included with [Node](https://nodejs.org/). You can install Node by downloading the installer from the website.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To update NPM to the latest version:
 
-## Learn More
+```
+npm install -g npm
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Installation
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone the repo
+
+```
+git clone https://github.com/sargalias/react-modal
+```
+
+2. Install NPM packages
+
+```
+npm install
+```
+
+### Running the project for development
+
+```
+npm start
+```
+
+
+## Usage
+
+### Starting the project
+
+- Start the project on a local server: `npm start`
+
+### Building the project
+
+- Build the project for production: `npm run build`
+
+
+## Built with
+
+- [React](https://reactjs.org/)
+- [typescript](https://www.typescriptlang.org/)
+- [focus-trap-react](https://www.npmjs.com/package/focus-trap-react) - For focus trapping inside the modal
+- [create-react-app](https://create-react-app.dev/) - Uses the typescript template.
+- [docker and docker compose](https://www.docker.com/)
+- [Node Docker image](https://hub.docker.com/_/node)
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
