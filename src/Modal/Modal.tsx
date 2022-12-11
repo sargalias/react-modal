@@ -4,6 +4,7 @@ import useFocusTrap from '../utilities/useFocusTrap';
 import useModalCloseListeners from './useModalCloseListeners';
 import style from './Modal.module.scss';
 import useModalContentRefAndElement from './useModalContentRefAndElement';
+import useInitialFocus from './userInitialFocus';
 
 type ModalProps = {
   onClose: () => void;
@@ -13,6 +14,7 @@ type ModalProps = {
   readonly ariaLabelledby?: string;
   readonly disablePortal?: boolean;
   readonly portalContainerElement?: Element;
+  readonly id?: string;
 };
 
 const Modal = (props: ModalProps) => {
@@ -22,18 +24,14 @@ const Modal = (props: ModalProps) => {
     portalContainerElement = document.querySelector('body') as Element,
     disablePortal = false,
     onClose,
+    id,
   } = props;
   const [elementToFocusOnClose] = useState(() => {
     return props.returnFocusTo || (document.activeElement! as HTMLElement);
   });
 
-  useEffect(() => {
-    if (initialFocusRef?.current) {
-      initialFocusRef.current.focus();
-    }
-  }, [initialFocusRef]);
-
   const [modalContentRef, modalContentElement] = useModalContentRefAndElement();
+  useInitialFocus({ initialFocusRef, modalContentElement });
   useFocusTrap(modalContentElement);
   useModalCloseListeners(modalContentElement, elementToFocusOnClose, onClose);
 
@@ -42,6 +40,8 @@ const Modal = (props: ModalProps) => {
       className={style.Modal}
       aria-modal="true"
       aria-labelledby={ariaLabelledby}
+      open={true}
+      data-testid={id}
     >
       <div className={style.Modal_Content} ref={modalContentRef}>
         {props.children}
