@@ -1,6 +1,15 @@
 # React Accessible Modal
 
-This project is an example of a modal (dialog) component made with React. It's made to be simple and accessible.
+This project is an example of a modal (dialog) component made with React. It's made to be simple and accessible. It purposely doesn't use the dialog's showModal and hideModal methods because they handle all the heavy lifting for accessibility and functionality.
+
+It's not necesssarily complete. It's just a quick example. For example, it doesn't have tests for all props. Also, I haven't thoroughly tested its accessibility with screen readers.
+
+The main component is the Modal component. I tried to make it the "react way" where the parent either renders the modal or doesn't. This contrasts the HTML way where the modal is always open and its `open` attribute is toggled either directly or through its methods.
+
+Alternative methods would be to:
+- Let HTML handle the heavy lifting. Use the dialog component along with the `showModal` and `hideModal` methods. They handle the majority of accessibility issues including closing the modal when Escape is pressed, focus trapping and changing the initial focus.
+- Allow the modal stay rendered and instead close / open with by passing an `open` prop from the parent.
+
 
 [View project](https://sargalias-react-modal.netlify.app)
 
@@ -17,6 +26,7 @@ This project is an example of a modal (dialog) component made with React. It's m
   - [Building the project](#building-the-project)
 - [Built with](#built-with)
 - [License](#license)
+
 
 ## Getting started with Docker
 
